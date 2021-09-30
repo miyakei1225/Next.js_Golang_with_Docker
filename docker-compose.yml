@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  next:
+    build: ./docker/next
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/workspace
+    working_dir: /workspace
+    command: yarn dev
+  app:
+    build: ./docker/go
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/go/src/app
