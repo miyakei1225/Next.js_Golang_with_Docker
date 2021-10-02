@@ -1,7 +1,8 @@
 package main
 
 import "fmt"
+import "rsc.io/quote"
 
 func main() {
-	fmt.Println("Hello golang from docker!")
+	fmt.Println(quote.go())
 }
